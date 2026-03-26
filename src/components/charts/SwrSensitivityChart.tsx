@@ -55,11 +55,13 @@ export function SwrSensitivityChart({ scenarios }: Props) {
           }}
           labelStyle={{ color: '#6b7280', fontSize: 12 }}
           itemStyle={{ color: '#374151', fontSize: 12 }}
-          formatter={(value: number, name: string) =>
-            name === t.fireNumber
-              ? [fmt.currencyCompact(value), name]
-              : [`${value === 100 ? '100+' : value} jr`, name]
-          }
+          formatter={(value, name) => {
+            const v = Number(value)
+            const n = String(name)
+            return n === t.fireNumber
+              ? [fmt.currencyCompact(v), n]
+              : [`${v === 100 ? '100+' : v} jr`, n]
+          }}
         />
         <Legend verticalAlign="top" height={24} wrapperStyle={{ fontSize: 12, color: DARK.text }} />
         <Bar

@@ -61,10 +61,13 @@ export function MonteCarloFanChart({ percentilePaths, years }: FanChartProps) {
           contentStyle={TOOLTIP_STYLE}
           labelStyle={{ color: '#6b7280', fontSize: 12 }}
           itemStyle={{ color: '#374151', fontSize: 12 }}
-          formatter={(value: number | [number, number], name: string) => {
+          formatter={(value, name) => {
             if (Array.isArray(value))
-              return [`${fmt.currencyCompact(value[0])} – ${fmt.currencyCompact(value[1])}`, name]
-            return [fmt.currencyCompact(value), name]
+              return [
+                `${fmt.currencyCompact(value[0])} – ${fmt.currencyCompact(value[1])}`,
+                String(name),
+              ]
+            return [fmt.currencyCompact(Number(value)), String(name)]
           }}
           labelFormatter={(label) => `${t.yearPrefix} ${label}`}
         />
@@ -140,7 +143,7 @@ export function DepletionHistogram({ histogram, noDepletionLabel }: HistogramPro
           contentStyle={TOOLTIP_STYLE}
           labelStyle={{ color: '#6b7280', fontSize: 12 }}
           itemStyle={{ color: '#374151', fontSize: 12 }}
-          formatter={(value: number) => [`${(value * 100).toFixed(1)}%`, t.fractionDepleted]}
+          formatter={(value) => [`${(Number(value) * 100).toFixed(1)}%`, t.fractionDepleted]}
           labelFormatter={(label) => `${t.yearPrefix} ${label}`}
         />
         <Bar

@@ -53,7 +53,7 @@ export function PortfolioGrowthChart({ data, fireNumber, yearsToFire }: Props) {
           }}
           labelStyle={{ color: '#6b7280', fontSize: 12 }}
           itemStyle={{ color: '#374151', fontSize: 12 }}
-          formatter={(value: number) => [fmt.currencyCompact(value)]}
+          formatter={(value) => [fmt.currencyCompact(Number(value))]}
           labelFormatter={(label) => `${t.yearPrefix} ${label}`}
         />
         <Legend verticalAlign="top" height={24} wrapperStyle={{ fontSize: 12, color: DARK.text }} />
