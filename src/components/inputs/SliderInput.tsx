@@ -1,6 +1,9 @@
+import { HelpTooltip } from '../ui/HelpTooltip'
+
 interface Props {
   label: string
   hint?: string
+  info?: string
   min: number
   max: number
   step: number
@@ -9,13 +12,16 @@ interface Props {
   format?: (value: number) => string
 }
 
-export function SliderInput({ label, hint, min, max, step, value, onChange, format }: Props) {
+export function SliderInput({ label, hint, info, min, max, step, value, onChange, format }: Props) {
   const display = format ? format(value) : String(value)
 
   return (
     <div className="space-y-1.5">
       <div className="flex justify-between items-baseline">
-        <label className="text-sm font-medium text-gray-700">{label}</label>
+        <div className="flex items-center gap-2">
+          <label className="text-sm font-medium text-gray-700">{label}</label>
+          {info && <HelpTooltip text={info} />}
+        </div>
         <span className="text-sm font-bold text-indigo-600 tabular-nums">{display}</span>
       </div>
       {hint && <p className="text-xs text-gray-400">{hint}</p>}

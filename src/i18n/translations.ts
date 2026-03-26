@@ -3,8 +3,8 @@ export type Language = 'nl' | 'en'
 export const translations = {
   nl: {
     // Header
-    appName: 'FIRECalc',
-    appSubtitle: 'Financiële Onafhankelijkheid · Vroeg Pensioen',
+    appName: 'FIRE Planner',
+    appSubtitle: '🔥 Financiële Onafhankelijkheid · Vroeg Pensioen',
     browserOnly: 'Alle berekeningen in je browser',
 
     // Nav / language
@@ -13,19 +13,39 @@ export const translations = {
     // Input panel
     yourNumbers: 'Jouw Cijfers',
     realRatesNote: 'Alle rendementen zijn reëel (na inflatie)',
+    inputHelpTitle: 'Hoe vul je dit in?',
+    inputHelpBody:
+      'Begin met je jaarlijkse uitgaven in geld van vandaag. Vul daarna in hoeveel vermogen je al hebt en hoeveel je elk jaar toevoegt. Het verwachte rendement is ook in geld van vandaag: dus al gecorrigeerd voor inflatie.',
     annualExpenses: 'Jaarlijkse Uitgaven',
+    annualExpensesInfo:
+      'Gebruik je verwachte jaarlijkse uitgaven tijdens FIRE, niet je huidige bruto salaris. Denk aan wonen, zorg, belasting en leuke dingen.',
     currentPortfolio: 'Huidig Vermogen',
+    currentPortfolioInfo:
+      'Tel beleggingen, pensioenpotten die je wilt meenemen en contanten die echt bedoeld zijn voor je FIRE-plan. Je eigen woning laat je meestal buiten beschouwing.',
     annualSavings: 'Jaarlijkse Spaarbedrag',
+    annualSavingsInfo:
+      'Dit is hoeveel je per jaar extra investeert. Gebruik netto bedrag dat daadwerkelijk richting vermogen gaat.',
     expectedReturn: 'Verwacht Reëel Rendement',
     expectedReturnHint: 'Europese aandelen historisch ~5–7% reëel',
+    expectedReturnInfo:
+      'Reëel rendement is na inflatie. Kies liever een voorzichtige langetermijninschatting dan een optimistisch beursjaar.',
     withdrawalRate: 'Veilige Onttrekkingsratio (SWR)',
     withdrawalRateHint: '4% is klassiek; 3,5% is conservatiever voor Europese gepensioneerden',
+    withdrawalRateInfo:
+      'Je SWR bepaalt welk deel van je portefeuille je jaarlijks onttrekt. Lager is veiliger, maar betekent ook dat je meer vermogen moet opbouwen.',
 
     // Fire Number
     fireNumberTitle: 'FIRE Bedrag',
     fireNumberSubtitle: (swr: string) =>
       `${swr} SWR — hoeveel je nodig hebt om met pensioen te gaan`,
     portfolioProgress: 'Vermogensvoortgang',
+    howToReadTitle: 'Hoe lees je dit?',
+    whatThisMeansTitle: 'Wat betekent dit?',
+    howToCompareTitle: 'Hoe vergelijk je dit?',
+    fireNumberHelp:
+      'Zie dit als je pensioenpot in geld van vandaag. Als jouw leven nu ongeveer dit bedrag per jaar kost, dan heb je met dit doelvermogen genoeg om datzelfde leven later te betalen, zonder eerst inflatie erbij op te tellen. Een lagere SWR maakt dit doelbedrag hoger maar veiliger.',
+    fireNumberSummary: (amount: string, swr: string) =>
+      `Met een SWR van ${swr} mik je op ongeveer ${amount} in koopkracht van vandaag om je jaarlijkse uitgaven te dekken.`,
 
     // Years to FIRE
     yearsToFireTitle: 'Jaren tot FIRE',
@@ -34,6 +54,8 @@ export const translations = {
     neverHint: 'met huidige spaartempo',
     alreadyThere: 'Je bent er al!',
     years: 'jaar',
+    yearsToFireHelp:
+      'Dit is een ruwe schatting van hoeveel jaar het duurt om je doel te halen als je elk jaar blijft inleggen en je gemiddelde rendement ongeveer klopt. Alles wordt getoond in geld van vandaag, dus je hoeft niet zelf na te denken over toekomstige inflatie. In werkelijkheid gaan markten op en neer, dus gebruik dit als kompas, niet als exacte datum.',
 
     // SWR Explorer
     swrTitle: 'SWR Verkenner',
@@ -44,6 +66,8 @@ export const translations = {
     survivesCol: 'Portefeuille houdt',
     now: 'Nu',
     yearsPlus: '100+ jaar',
+    swrHelp:
+      'Hier zie je de afruil tussen eerder stoppen en meer zekerheid. Een hogere SWR betekent dat je sneller kunt stoppen omdat je minder vermogen nodig hebt, maar je portefeuille wordt kwetsbaarder. Een lagere SWR vraagt meer jaren opbouw, maar geeft meer marge als rendementen tegenvallen.',
 
     // Monte Carlo
     monteCarloTitle: 'Monte Carlo Simulatie',
@@ -59,6 +83,8 @@ export const translations = {
     retirementYear: 'Pensioenjaar',
     depleted: 'Uitgeput',
     fractionDepleted: 'Fractie uitgeput',
+    monteCarloHelp:
+      'Dit onderdeel test niet één toekomst, maar heel veel mogelijke toekomsten. Het percentage laat zien in hoeveel scenario’s je pensioenpot lang genoeg meegaat. Ook hier rekenen we in geld van vandaag: je uitgaven en rendement zijn dus al gecorrigeerd voor inflatie. Een lagere score betekent vooral dat slechte eerste beursjaren pijn doen.',
 
     // Info section
     infoTitle: 'Wat is FIRE?',
@@ -85,28 +111,50 @@ export const translations = {
   },
 
   en: {
-    appName: 'FIRECalc',
-    appSubtitle: 'Financial Independence · Retire Early',
+    appName: 'FIRE Planner',
+    appSubtitle: '🔥 Financial Independence · Retire Early',
     browserOnly: 'All calculations run in your browser',
     language: 'Language',
     yourNumbers: 'Your Numbers',
     realRatesNote: 'All rates are real (inflation-adjusted)',
+    inputHelpTitle: 'How should you fill this in?',
+    inputHelpBody:
+      'Start with your annual spending in today’s money. Then enter how much wealth you already have and how much you add each year. The expected return is also in today’s money, which means inflation is already stripped out.',
     annualExpenses: 'Annual Expenses',
+    annualExpensesInfo:
+      'Use your expected yearly spending during FIRE, not your current gross salary. Include housing, healthcare, taxes, and normal lifestyle spending.',
     currentPortfolio: 'Current Portfolio',
+    currentPortfolioInfo:
+      'Include investments, pensions you want to count, and cash actually meant for your FIRE plan. Most people exclude their primary home.',
     annualSavings: 'Annual Savings',
+    annualSavingsInfo:
+      'This is how much you invest each year on top of growth. Use the net amount that truly goes into wealth building.',
     expectedReturn: 'Expected Real Return',
     expectedReturnHint: 'European equities historically ~5–7% real',
+    expectedReturnInfo:
+      'Real return means after inflation. A cautious long-term estimate is usually better than extrapolating a strong market year.',
     withdrawalRate: 'Safe Withdrawal Rate (SWR)',
     withdrawalRateHint: '4% is classic; 3.5% is more conservative for European retirees',
+    withdrawalRateInfo:
+      'Your SWR is the share of the portfolio you withdraw each year. Lower is safer, but it also means you need a larger portfolio.',
     fireNumberTitle: 'FIRE Number',
     fireNumberSubtitle: (swr: string) => `${swr} SWR — how much you need to retire`,
     portfolioProgress: 'Portfolio progress',
+    howToReadTitle: 'How do you read this?',
+    whatThisMeansTitle: 'What does this mean?',
+    howToCompareTitle: 'How do you compare this?',
+    fireNumberHelp:
+      'Think of this as your retirement pot in today’s money. If your life costs roughly this much per year now, this target aims to fund that same lifestyle later without you having to manually add future inflation on top. A lower SWR raises the target, but it is also safer.',
+    fireNumberSummary: (amount: string, swr: string) =>
+      `At a ${swr} SWR, you are aiming for roughly ${amount} of today’s purchasing power to fund your annual spending.`,
     yearsToFireTitle: 'Years to FIRE',
     yearsToFireSubtitle: 'Deterministic projection at your expected real return',
     never: 'Never',
     neverHint: 'with current savings rate',
     alreadyThere: 'Already there!',
     years: 'years',
+    yearsToFireHelp:
+      'This is a rough estimate of how many years it takes to hit your target if you keep investing each year and your average return is about right. Everything is shown in today’s money, so you do not need to mentally adjust for future inflation. Real markets are bumpier than this, so use it as a compass, not a promise.',
     swrTitle: 'SWR Explorer',
     swrSubtitle: 'How withdrawal rate affects your FIRE target and retirement safety',
     swrCol: 'SWR',
@@ -115,6 +163,8 @@ export const translations = {
     survivesCol: 'Portfolio survives',
     now: 'Now',
     yearsPlus: '100+ yrs',
+    swrHelp:
+      'This shows the tradeoff between retiring earlier and having more safety. A higher SWR lets you retire with less money, but makes the portfolio more fragile. A lower SWR takes longer to reach, but gives you more margin when returns disappoint.',
     monteCarloTitle: 'Monte Carlo Simulation',
     monteCarloSubtitle: (n: string, yrs: string) =>
       `${n} simulations, log-normal returns (±15% std dev), starting from your FIRE number over ${yrs} years`,
@@ -128,6 +178,8 @@ export const translations = {
     retirementYear: 'Retirement Year',
     depleted: 'Depleted',
     fractionDepleted: 'Fraction depleted',
+    monteCarloHelp:
+      'This does not test one future. It tests many possible futures. The percentage shows how often the retirement portfolio lasted long enough across those scenarios. This also uses today’s money, so spending and returns are already adjusted for inflation. A lower score usually means bad early market years would hurt a lot.',
     infoTitle: 'What is FIRE?',
     infoFIRE: `**FIRE** stands for Financial Independence, Retire Early. The idea is simple: build a portfolio large enough that you can live off the investment returns indefinitely, without ever needing to work again.`,
     info4Percent: `**The 4% rule** comes from the Trinity Study (1998). Researchers analyzed historical equity returns and found that a portfolio of 25× annual expenses can sustain a 4% annual withdrawal with high probability over 30 years. For longer horizons (40–60 years), a lower SWR of 3–3.5% is safer.`,

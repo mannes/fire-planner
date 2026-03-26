@@ -4,6 +4,7 @@ import { calcFireNumber } from '../../lib/fireNumber'
 import { fmt } from '../../lib/format'
 import { useI18n } from '../../i18n/I18nContext'
 import { SectionCard } from '../layout/SectionCard'
+import { DisclosureBox } from '../ui/DisclosureBox'
 
 interface Props {
   inputs: GlobalInputs
@@ -25,7 +26,11 @@ export function FireNumberSection({ inputs }: Props) {
       title={t.fireNumberTitle}
       subtitle={t.fireNumberSubtitle(fmt.percent(inputs.withdrawalRate))}
     >
-      <div className="text-4xl font-bold text-indigo-600 mb-1 tabular-nums">
+      <div className="text-sm text-gray-500 leading-relaxed">
+        {t.fireNumberSummary(fmt.currency(fireNumber), fmt.percent(inputs.withdrawalRate))}
+      </div>
+
+      <div className="text-4xl font-bold text-indigo-600 mt-5 mb-1 tabular-nums">
         {fmt.currency(fireNumber)}
       </div>
       <p className="text-xs text-gray-400 mb-5">
@@ -61,6 +66,12 @@ export function FireNumberSection({ inputs }: Props) {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-5">
+        <DisclosureBox title={t.howToReadTitle}>
+          <p>{t.fireNumberHelp}</p>
+        </DisclosureBox>
       </div>
     </SectionCard>
   )

@@ -1,4 +1,4 @@
-# FIRECalc — Implementation Notes
+# FIRE Planner — Implementation Notes
 
 ## What this is
 
@@ -75,6 +75,19 @@ Dutch is the default language. The `I18nContext` exports both `I18nProvider` (a 
 ### Currency formatting
 
 `src/lib/format.ts` uses `en-IE` locale with `currency: 'EUR'`. This gives `€40,000` formatting. All components import from here — no inline `Intl.NumberFormat` calls in components.
+
+### Guidance UX
+
+The calculator now includes two explanation patterns for non-expert users:
+
+- Inline click-to-open `?` popups on important inputs
+- Collapsible explainer boxes at the bottom of result cards
+
+The popups are dismissible via close button, outside click, or `Escape`. Copy should avoid jargon where possible and explain outputs in terms of **today's money** rather than assuming users understand real-vs-nominal returns.
+
+### Branding
+
+The product name is **FIRE Planner**. Browser title, header branding, README/PLAN naming, and favicon should stay aligned with that brand. Current visual branding uses a fire motif.
 
 ---
 

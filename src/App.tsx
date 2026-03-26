@@ -37,8 +37,10 @@ export default function App() {
       {/* Header */}
       <header className="border-b border-indigo-100 bg-white/80 backdrop-blur-md sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center shadow-md shadow-indigo-200">
-            <span className="text-white text-sm font-bold">F</span>
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-400 via-red-500 to-rose-600 flex items-center justify-center shadow-md shadow-orange-200">
+            <span className="text-lg leading-none" aria-hidden="true">
+              🔥
+            </span>
           </div>
           <div>
             <h1 className="text-base font-semibold text-gray-900 leading-none tracking-tight">

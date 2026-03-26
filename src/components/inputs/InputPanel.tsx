@@ -2,6 +2,7 @@ import type { GlobalInputs } from '../../lib/types'
 import { fmt } from '../../lib/format'
 import { useI18n } from '../../i18n/I18nContext'
 import { SliderInput } from './SliderInput'
+import { DisclosureBox } from '../ui/DisclosureBox'
 
 interface Props {
   inputs: GlobalInputs
@@ -18,8 +19,13 @@ export function InputPanel({ inputs, onChange }: Props) {
         <p className="text-xs text-gray-400">{t.realRatesNote}</p>
       </div>
 
+      <DisclosureBox title={t.inputHelpTitle} defaultOpen>
+        <p>{t.inputHelpBody}</p>
+      </DisclosureBox>
+
       <SliderInput
         label={t.annualExpenses}
+        info={t.annualExpensesInfo}
         min={10000}
         max={300000}
         step={5000}
@@ -30,6 +36,7 @@ export function InputPanel({ inputs, onChange }: Props) {
 
       <SliderInput
         label={t.currentPortfolio}
+        info={t.currentPortfolioInfo}
         min={0}
         max={5000000}
         step={10000}
@@ -40,6 +47,7 @@ export function InputPanel({ inputs, onChange }: Props) {
 
       <SliderInput
         label={t.annualSavings}
+        info={t.annualSavingsInfo}
         min={0}
         max={300000}
         step={5000}
@@ -51,6 +59,7 @@ export function InputPanel({ inputs, onChange }: Props) {
       <SliderInput
         label={t.expectedReturn}
         hint={t.expectedReturnHint}
+        info={t.expectedReturnInfo}
         min={0.01}
         max={0.15}
         step={0.005}
@@ -62,6 +71,7 @@ export function InputPanel({ inputs, onChange }: Props) {
       <SliderInput
         label={t.withdrawalRate}
         hint={t.withdrawalRateHint}
+        info={t.withdrawalRateInfo}
         min={0.02}
         max={0.06}
         step={0.005}

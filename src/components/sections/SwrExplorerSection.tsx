@@ -5,6 +5,7 @@ import { fmt } from '../../lib/format'
 import { useI18n } from '../../i18n/I18nContext'
 import { SectionCard } from '../layout/SectionCard'
 import { SwrSensitivityChart } from '../charts/SwrSensitivityChart'
+import { DisclosureBox } from '../ui/DisclosureBox'
 
 interface Props {
   inputs: GlobalInputs
@@ -61,6 +62,12 @@ export function SwrExplorerSection({ inputs }: Props) {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="mt-5">
+        <DisclosureBox title={t.howToCompareTitle}>
+          <p>{t.swrHelp}</p>
+        </DisclosureBox>
       </div>
     </SectionCard>
   )

@@ -8,6 +8,7 @@ import { SectionCard } from '../layout/SectionCard'
 import { MonteCarloFanChart, DepletionHistogram } from '../charts/MonteCarloChart'
 import { SliderInput } from '../inputs/SliderInput'
 import clsx from 'clsx'
+import { DisclosureBox } from '../ui/DisclosureBox'
 
 interface Props {
   inputs: GlobalInputs
@@ -88,6 +89,12 @@ export function MonteCarloSection({ inputs }: Props) {
           histogram={result.depletionHistogram}
           noDepletionLabel={t.noDepletion}
         />
+      </div>
+
+      <div className="mt-5">
+        <DisclosureBox title={t.howToReadTitle}>
+          <p>{t.monteCarloHelp}</p>
+        </DisclosureBox>
       </div>
     </SectionCard>
   )

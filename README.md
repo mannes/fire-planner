@@ -1,4 +1,4 @@
-# FIRECalc
+# FIRE Planner
 
 Browser-only FIRE (Financial Independence, Retire Early) calculator. No backend, no API calls — all calculations run client-side.
 
