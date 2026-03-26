@@ -22,15 +22,15 @@ npm run dev
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start dev server |
-| `npm run build` | Type-check and build for production |
-| `npm run typecheck` | TypeScript type check |
-| `npm run lint` | ESLint |
-| `npm run format` | Prettier (auto-fix) |
-| `npm run test` | Vitest (28 tests) |
-| `npm run ci` | Full CI: typecheck + lint + format + test |
+| Command             | Description                               |
+| ------------------- | ----------------------------------------- |
+| `npm run dev`       | Start dev server                          |
+| `npm run build`     | Type-check and build for production       |
+| `npm run typecheck` | TypeScript type check                     |
+| `npm run lint`      | ESLint                                    |
+| `npm run format`    | Prettier (auto-fix)                       |
+| `npm run test`      | Vitest (28 tests)                         |
+| `npm run ci`        | Full CI: typecheck + lint + format + test |
 
 ## Stack
 
