@@ -6,7 +6,10 @@ function boxMullerNormal(): number {
   return Math.sqrt(-2 * Math.log(Math.max(u1, 1e-10))) * Math.cos(2 * Math.PI * u2)
 }
 
-function logNormalParams(arithmeticMean: number, stdDev: number): { muLn: number; sigmaLn: number } {
+function logNormalParams(
+  arithmeticMean: number,
+  stdDev: number,
+): { muLn: number; sigmaLn: number } {
   const sigmaLn = Math.sqrt(Math.log(1 + (stdDev / (1 + arithmeticMean)) ** 2))
   const muLn = Math.log(1 + arithmeticMean) - 0.5 * sigmaLn * sigmaLn
   return { muLn, sigmaLn }
@@ -37,7 +40,11 @@ function computePercentilePaths(paths: number[][], years: number): PercentilePat
   }
 }
 
-function buildHistogram(depletionYears: number[], totalYears: number, total: number): HistogramBin[] {
+function buildHistogram(
+  depletionYears: number[],
+  totalYears: number,
+  total: number,
+): HistogramBin[] {
   const binSize = 5
   const bins: HistogramBin[] = []
 
@@ -54,7 +61,8 @@ function buildHistogram(depletionYears: number[], totalYears: number, total: num
 }
 
 export function runMonteCarlo(inputs: MonteCarloInputs): MonteCarloResult {
-  const { startingPortfolio, annualSpending, years, numSimulations, meanRealReturn, stdDevReturn } = inputs
+  const { startingPortfolio, annualSpending, years, numSimulations, meanRealReturn, stdDevReturn } =
+    inputs
   const { muLn, sigmaLn } = logNormalParams(meanRealReturn, stdDevReturn)
 
   const paths: number[][] = []

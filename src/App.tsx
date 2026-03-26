@@ -33,7 +33,9 @@ export default function App() {
             <span className="text-white text-sm font-bold">F</span>
           </div>
           <div>
-            <h1 className="text-base font-semibold text-white leading-none tracking-tight">{t.appName}</h1>
+            <h1 className="text-base font-semibold text-white leading-none tracking-tight">
+              {t.appName}
+            </h1>
             <p className="text-xs text-slate-400">{t.appSubtitle}</p>
           </div>
 

@@ -8,8 +8,7 @@ export default defineConfig({
   base: '/firecalc/',
   test: {
     globals: true,
-    environment: 'jsdom',
-    setupFiles: ['./src/test/setup.ts'],
+    environment: 'node',
     coverage: {
       provider: 'v8',
       include: ['src/lib/**'],

@@ -39,9 +39,19 @@ export function MonteCarloFanChart({ percentilePaths, years }: FanChartProps) {
         <XAxis
           dataKey="year"
           tick={{ fontSize: 11, fill: DARK.text }}
-          label={{ value: t.retirementYear, position: 'insideBottom', offset: -8, fontSize: 11, fill: DARK.text }}
+          label={{
+            value: t.retirementYear,
+            position: 'insideBottom',
+            offset: -8,
+            fontSize: 11,
+            fill: DARK.text,
+          }}
         />
-        <YAxis tickFormatter={fmt.currencyCompact} tick={{ fontSize: 11, fill: DARK.text }} width={60} />
+        <YAxis
+          tickFormatter={fmt.currencyCompact}
+          tick={{ fontSize: 11, fill: DARK.text }}
+          width={60}
+        />
         <Tooltip
           contentStyle={TOOLTIP_STYLE}
           labelStyle={{ color: '#94a3b8', fontSize: 12 }}
@@ -54,9 +64,31 @@ export function MonteCarloFanChart({ percentilePaths, years }: FanChartProps) {
           labelFormatter={(label) => `${t.yearPrefix} ${label}`}
         />
         <Legend verticalAlign="top" height={24} wrapperStyle={{ fontSize: 12, color: DARK.text }} />
-        <Area type="monotone" dataKey="band90_10" name={t.p1090} stroke="none" fill="#4f46e5" fillOpacity={0.15} />
-        <Area type="monotone" dataKey="band75_25" name={t.p2575} stroke="none" fill="#6366f1" fillOpacity={0.25} />
-        <Area type="monotone" dataKey="p50" name={t.median} stroke="#818cf8" strokeWidth={2} fill="none" dot={false} />
+        <Area
+          type="monotone"
+          dataKey="band90_10"
+          name={t.p1090}
+          stroke="none"
+          fill="#4f46e5"
+          fillOpacity={0.15}
+        />
+        <Area
+          type="monotone"
+          dataKey="band75_25"
+          name={t.p2575}
+          stroke="none"
+          fill="#6366f1"
+          fillOpacity={0.25}
+        />
+        <Area
+          type="monotone"
+          dataKey="p50"
+          name={t.median}
+          stroke="#818cf8"
+          strokeWidth={2}
+          fill="none"
+          dot={false}
+        />
       </AreaChart>
     </ResponsiveContainer>
   )
@@ -86,7 +118,13 @@ export function DepletionHistogram({ histogram, noDepletionLabel }: HistogramPro
         <XAxis
           dataKey="yearRange"
           tick={{ fontSize: 10, fill: DARK.text }}
-          label={{ value: t.yearRangeLabel, position: 'insideBottom', offset: -8, fontSize: 11, fill: DARK.text }}
+          label={{
+            value: t.yearRangeLabel,
+            position: 'insideBottom',
+            offset: -8,
+            fontSize: 11,
+            fill: DARK.text,
+          }}
         />
         <YAxis
           tickFormatter={(v) => `${(v * 100).toFixed(0)}%`}
@@ -100,7 +138,13 @@ export function DepletionHistogram({ histogram, noDepletionLabel }: HistogramPro
           formatter={(value: number) => [`${(value * 100).toFixed(1)}%`, t.fractionDepleted]}
           labelFormatter={(label) => `${t.yearPrefix} ${label}`}
         />
-        <Bar dataKey="fraction" name={t.depleted} fill="#f87171" radius={[4, 4, 0, 0]} opacity={0.8} />
+        <Bar
+          dataKey="fraction"
+          name={t.depleted}
+          fill="#f87171"
+          radius={[4, 4, 0, 0]}
+          opacity={0.8}
+        />
       </BarChart>
     </ResponsiveContainer>
   )

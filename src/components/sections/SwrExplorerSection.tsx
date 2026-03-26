@@ -20,7 +20,12 @@ export function SwrExplorerSection({ inputs }: Props) {
         inputs.annualSavings,
         inputs.expectedRealReturn,
       ),
-    [inputs.annualExpenses, inputs.currentPortfolio, inputs.annualSavings, inputs.expectedRealReturn],
+    [
+      inputs.annualExpenses,
+      inputs.currentPortfolio,
+      inputs.annualSavings,
+      inputs.expectedRealReturn,
+    ],
   )
 
   return (
@@ -46,8 +51,8 @@ export function SwrExplorerSection({ inputs }: Props) {
                   {s.yearsToFire === null
                     ? t.yearsPlus
                     : s.yearsToFire === 0
-                    ? t.now
-                    : `${s.yearsToFire} ${t.years}`}
+                      ? t.now
+                      : `${s.yearsToFire} ${t.years}`}
                 </td>
                 <td className="py-2 text-slate-400 tabular-nums">
                   {s.longevity === null ? t.yearsPlus : `${s.longevity} ${t.years}`}

@@ -31,7 +31,13 @@ export function PortfolioGrowthChart({ data, fireNumber, yearsToFire }: Props) {
         <XAxis
           dataKey="year"
           tick={{ fontSize: 11, fill: DARK.text }}
-          label={{ value: t.yearLabel, position: 'insideBottom', offset: -8, fontSize: 11, fill: DARK.text }}
+          label={{
+            value: t.yearLabel,
+            position: 'insideBottom',
+            offset: -8,
+            fontSize: 11,
+            fill: DARK.text,
+          }}
         />
         <YAxis
           tickFormatter={fmt.currencyCompact}
@@ -39,17 +45,17 @@ export function PortfolioGrowthChart({ data, fireNumber, yearsToFire }: Props) {
           width={60}
         />
         <Tooltip
-          contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: 8 }}
+          contentStyle={{
+            backgroundColor: '#1e293b',
+            border: '1px solid #334155',
+            borderRadius: 8,
+          }}
           labelStyle={{ color: '#94a3b8', fontSize: 12 }}
           itemStyle={{ color: '#e2e8f0', fontSize: 12 }}
           formatter={(value: number) => [fmt.currencyCompact(value)]}
           labelFormatter={(label) => `${t.yearPrefix} ${label}`}
         />
-        <Legend
-          verticalAlign="top"
-          height={24}
-          wrapperStyle={{ fontSize: 12, color: DARK.text }}
-        />
+        <Legend verticalAlign="top" height={24} wrapperStyle={{ fontSize: 12, color: DARK.text }} />
         <ReferenceLine
           y={fireNumber}
           stroke="#10b981"
@@ -61,7 +67,12 @@ export function PortfolioGrowthChart({ data, fireNumber, yearsToFire }: Props) {
             x={yearsToFire}
             stroke="#6366f1"
             strokeDasharray="4 3"
-            label={{ value: `${t.yr} ${yearsToFire}`, position: 'top', fontSize: 10, fill: '#6366f1' }}
+            label={{
+              value: `${t.yr} ${yearsToFire}`,
+              position: 'top',
+              fontSize: 10,
+              fill: '#6366f1',
+            }}
           />
         )}
         <Line

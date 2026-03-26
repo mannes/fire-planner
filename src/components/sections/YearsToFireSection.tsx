@@ -47,7 +47,11 @@ export function YearsToFireSection({ inputs }: Props) {
           </>
         )}
       </div>
-      <PortfolioGrowthChart data={projectionData} fireNumber={fireNumber} yearsToFire={yearsToFire} />
+      <PortfolioGrowthChart
+        data={projectionData}
+        fireNumber={fireNumber}
+        yearsToFire={yearsToFire}
+      />
     </SectionCard>
   )
 }

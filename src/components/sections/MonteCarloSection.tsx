@@ -23,10 +23,7 @@ export function MonteCarloSection({ inputs }: Props) {
     [inputs.annualExpenses, inputs.withdrawalRate],
   )
 
-  const debouncedState = useDebounce(
-    { inputs, retirementYears, numSimulations, fireNumber },
-    300,
-  )
+  const debouncedState = useDebounce({ inputs, retirementYears, numSimulations, fireNumber }, 300)
 
   const result = useMemo(
     () =>
@@ -38,7 +35,6 @@ export function MonteCarloSection({ inputs }: Props) {
         meanRealReturn: debouncedState.inputs.expectedRealReturn,
         stdDevReturn: 0.15,
       }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [debouncedState],
   )
 
@@ -47,8 +43,8 @@ export function MonteCarloSection({ inputs }: Props) {
     result.successRate >= 0.9
       ? 'text-emerald-400'
       : result.successRate >= 0.75
-      ? 'text-amber-400'
-      : 'text-red-400'
+        ? 'text-amber-400'
+        : 'text-red-400'
 
   return (
     <SectionCard
@@ -88,7 +84,10 @@ export function MonteCarloSection({ inputs }: Props) {
 
       <div>
         <p className="text-xs font-medium text-slate-500 mb-2">{t.whenDepleted}</p>
-        <DepletionHistogram histogram={result.depletionHistogram} noDepletionLabel={t.noDepletion} />
+        <DepletionHistogram
+          histogram={result.depletionHistogram}
+          noDepletionLabel={t.noDepletion}
+        />
       </div>
     </SectionCard>
   )

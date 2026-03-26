@@ -23,7 +23,8 @@ export const translations = {
 
     // Fire Number
     fireNumberTitle: 'FIRE Bedrag',
-    fireNumberSubtitle: (swr: string) => `${swr} SWR — hoeveel je nodig hebt om met pensioen te gaan`,
+    fireNumberSubtitle: (swr: string) =>
+      `${swr} SWR — hoeveel je nodig hebt om met pensioen te gaan`,
     portfolioProgress: 'Vermogensvoortgang',
 
     // Years to FIRE

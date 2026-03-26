@@ -11,7 +11,12 @@ export function calcSwrExplorer(
 ): SwrExplorerResult {
   const scenarios: SwrScenario[] = SWR_STEPS.map((swr) => {
     const fireNumber = annualExpenses / swr
-    const { yearsToFire } = calcYearsToFire(currentPortfolio, annualSavings, expectedRealReturn, fireNumber)
+    const { yearsToFire } = calcYearsToFire(
+      currentPortfolio,
+      annualSavings,
+      expectedRealReturn,
+      fireNumber,
+    )
     const longevity = calcPortfolioLongevity(fireNumber, annualExpenses, expectedRealReturn)
     return { swr, fireNumber, yearsToFire, longevity }
   })
