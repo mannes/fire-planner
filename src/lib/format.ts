@@ -16,5 +16,12 @@ export const fmt = {
       maximumFractionDigits: 1,
     }).format(v),
 
+  currencyMonthly: (v: number) =>
+    `${new Intl.NumberFormat(LOCALE, {
+      style: 'currency',
+      currency: 'EUR',
+      maximumFractionDigits: 0,
+    }).format(v)}/mo`,
+
   percent: (v: number) => `${(v * 100).toFixed(1)}%`,
 }

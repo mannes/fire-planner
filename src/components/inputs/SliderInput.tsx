@@ -4,6 +4,7 @@ interface Props {
   label: string
   hint?: string
   info?: string
+  valueNote?: string
   min: number
   max: number
   step: number
@@ -12,7 +13,18 @@ interface Props {
   format?: (value: number) => string
 }
 
-export function SliderInput({ label, hint, info, min, max, step, value, onChange, format }: Props) {
+export function SliderInput({
+  label,
+  hint,
+  info,
+  valueNote,
+  min,
+  max,
+  step,
+  value,
+  onChange,
+  format,
+}: Props) {
   const display = format ? format(value) : String(value)
 
   return (
@@ -24,6 +36,7 @@ export function SliderInput({ label, hint, info, min, max, step, value, onChange
         </div>
         <span className="text-sm font-bold text-indigo-600 tabular-nums">{display}</span>
       </div>
+      {valueNote && <p className="text-xs text-gray-500">{valueNote}</p>}
       {hint && <p className="text-xs text-gray-400">{hint}</p>}
       <input
         type="range"

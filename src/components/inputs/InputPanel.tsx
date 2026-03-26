@@ -11,6 +11,8 @@ interface Props {
 
 export function InputPanel({ inputs, onChange }: Props) {
   const { t } = useI18n()
+  const monthlyExpenses = inputs.annualExpenses / 12
+  const monthlySavings = inputs.annualSavings / 12
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-indigo-100 p-6 space-y-6">
@@ -26,12 +28,13 @@ export function InputPanel({ inputs, onChange }: Props) {
       <SliderInput
         label={t.annualExpenses}
         info={t.annualExpensesInfo}
-        min={10000}
-        max={300000}
-        step={5000}
-        value={inputs.annualExpenses}
-        onChange={(v) => onChange('annualExpenses', v)}
-        format={fmt.currency}
+        valueNote={t.annualizedAmount(fmt.currency(inputs.annualExpenses))}
+        min={800}
+        max={25000}
+        step={100}
+        value={monthlyExpenses}
+        onChange={(v) => onChange('annualExpenses', v * 12)}
+        format={fmt.currencyMonthly}
       />
 
       <SliderInput
@@ -48,12 +51,13 @@ export function InputPanel({ inputs, onChange }: Props) {
       <SliderInput
         label={t.annualSavings}
         info={t.annualSavingsInfo}
+        valueNote={t.annualizedAmount(fmt.currency(inputs.annualSavings))}
         min={0}
-        max={300000}
-        step={5000}
-        value={inputs.annualSavings}
-        onChange={(v) => onChange('annualSavings', v)}
-        format={fmt.currency}
+        max={25000}
+        step={100}
+        value={monthlySavings}
+        onChange={(v) => onChange('annualSavings', v * 12)}
+        format={fmt.currencyMonthly}
       />
 
       <SliderInput

@@ -20,6 +20,7 @@ export function FireNumberSection({ inputs }: Props) {
   const progress = inputs.currentPortfolio / fireNumber
   const progressPct = Math.min(progress * 100, 100)
   const swrVariants = [0.03, 0.035, 0.04] as const
+  const monthlyExpenses = inputs.annualExpenses / 12
 
   return (
     <SectionCard
@@ -34,7 +35,7 @@ export function FireNumberSection({ inputs }: Props) {
         {fmt.currency(fireNumber)}
       </div>
       <p className="text-xs text-gray-400 mb-5">
-        = {fmt.currency(inputs.annualExpenses)} ÷ {fmt.percent(inputs.withdrawalRate)}
+        = {fmt.currencyMonthly(monthlyExpenses)} × 12 ÷ {fmt.percent(inputs.withdrawalRate)}
       </p>
 
       <div className="space-y-1.5 mb-5">

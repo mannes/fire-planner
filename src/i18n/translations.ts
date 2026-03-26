@@ -15,16 +15,17 @@ export const translations = {
     realRatesNote: 'Alle rendementen zijn reëel (na inflatie)',
     inputHelpTitle: 'Hoe vul je dit in?',
     inputHelpBody:
-      'Begin met je jaarlijkse uitgaven in geld van vandaag. Vul daarna in hoeveel vermogen je al hebt en hoeveel je elk jaar toevoegt. Het verwachte rendement is ook in geld van vandaag: dus al gecorrigeerd voor inflatie.',
-    annualExpenses: 'Jaarlijkse Uitgaven',
+      'Begin met je maandelijkse uitgaven in geld van vandaag. Vul daarna in hoeveel vermogen je al hebt en hoeveel je maandelijks toevoegt. De app rekent dat automatisch door naar jaarbedragen voor de berekeningen. Het verwachte rendement is ook in geld van vandaag: dus al gecorrigeerd voor inflatie.',
+    annualExpenses: 'Maandelijkse Uitgaven',
     annualExpensesInfo:
-      'Gebruik je verwachte jaarlijkse uitgaven tijdens FIRE, niet je huidige bruto salaris. Denk aan wonen, zorg, belasting en leuke dingen.',
+      'Gebruik wat je per maand verwacht uit te geven tijdens FIRE, niet je huidige bruto salaris. Denk aan wonen, zorg, belasting en leuke dingen.',
     currentPortfolio: 'Huidig Vermogen',
     currentPortfolioInfo:
       'Tel beleggingen, pensioenpotten die je wilt meenemen en contanten die echt bedoeld zijn voor je FIRE-plan. Je eigen woning laat je meestal buiten beschouwing.',
-    annualSavings: 'Jaarlijkse Spaarbedrag',
+    annualSavings: 'Maandelijkse Inleg',
     annualSavingsInfo:
-      'Dit is hoeveel je per jaar extra investeert. Gebruik netto bedrag dat daadwerkelijk richting vermogen gaat.',
+      'Dit is hoeveel je per maand extra investeert. Gebruik het netto bedrag dat daadwerkelijk richting vermogen gaat.',
+    annualizedAmount: (amount: string) => `${amount} per jaar`,
     expectedReturn: 'Verwacht Reëel Rendement',
     expectedReturnHint: 'Europese aandelen historisch ~5–7% reëel',
     expectedReturnInfo:
@@ -119,16 +120,17 @@ export const translations = {
     realRatesNote: 'All rates are real (inflation-adjusted)',
     inputHelpTitle: 'How should you fill this in?',
     inputHelpBody:
-      'Start with your annual spending in today’s money. Then enter how much wealth you already have and how much you add each year. The expected return is also in today’s money, which means inflation is already stripped out.',
-    annualExpenses: 'Annual Expenses',
+      'Start with your monthly spending in today’s money. Then enter how much wealth you already have and how much you add each month. The app converts that into yearly amounts for the calculations. The expected return is also in today’s money, which means inflation is already stripped out.',
+    annualExpenses: 'Monthly Expenses',
     annualExpensesInfo:
-      'Use your expected yearly spending during FIRE, not your current gross salary. Include housing, healthcare, taxes, and normal lifestyle spending.',
+      'Use your expected monthly spending during FIRE, not your current gross salary. Include housing, healthcare, taxes, and normal lifestyle spending.',
     currentPortfolio: 'Current Portfolio',
     currentPortfolioInfo:
       'Include investments, pensions you want to count, and cash actually meant for your FIRE plan. Most people exclude their primary home.',
-    annualSavings: 'Annual Savings',
+    annualSavings: 'Monthly Contributions',
     annualSavingsInfo:
-      'This is how much you invest each year on top of growth. Use the net amount that truly goes into wealth building.',
+      'This is how much you invest each month on top of growth. Use the net amount that truly goes into wealth building.',
+    annualizedAmount: (amount: string) => `${amount} per year`,
     expectedReturn: 'Expected Real Return',
     expectedReturnHint: 'European equities historically ~5–7% real',
     expectedReturnInfo:
