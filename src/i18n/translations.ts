@@ -80,6 +80,8 @@ export const translations = {
     median: 'Mediaan',
     yearRangeLabel: 'Jaar uitgeput',
     yearPrefix: 'Jaar',
+    disclaimer:
+      'Deze tool is uitsluitend bedoeld voor educatieve en informatieve doeleinden. Niets hier vormt financieel, fiscaal of beleggingsadvies. Rendementen uit het verleden bieden geen garantie voor de toekomst. Raadpleeg een gekwalificeerd financieel adviseur voordat je beleggings- of pensioenbeslissingen neemt.',
   },
 
   en: {
@@ -143,6 +145,8 @@ export const translations = {
     median: 'Median',
     yearRangeLabel: 'Year ran out',
     yearPrefix: 'Year',
+    disclaimer:
+      'This tool is for educational and informational purposes only. Nothing here constitutes financial, tax, or investment advice. Past market returns do not guarantee future results. Consult a qualified financial adviser before making any investment or retirement decisions.',
   },
 } satisfies Record<Language, Record<string, unknown>>
 
