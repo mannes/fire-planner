@@ -15,10 +15,10 @@ export function SliderInput({ label, hint, min, max, step, value, onChange, form
   return (
     <div className="space-y-1.5">
       <div className="flex justify-between items-baseline">
-        <label className="text-sm font-medium text-slate-300">{label}</label>
-        <span className="text-sm font-bold text-indigo-400 tabular-nums">{display}</span>
+        <label className="text-sm font-medium text-gray-700">{label}</label>
+        <span className="text-sm font-bold text-indigo-600 tabular-nums">{display}</span>
       </div>
-      {hint && <p className="text-xs text-slate-500">{hint}</p>}
+      {hint && <p className="text-xs text-gray-400">{hint}</p>}
       <input
         type="range"
         min={min}
@@ -26,9 +26,9 @@ export function SliderInput({ label, hint, min, max, step, value, onChange, form
         step={step}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-white/10 accent-indigo-500"
+        className="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-indigo-100 accent-indigo-500"
       />
-      <div className="flex justify-between text-xs text-slate-600">
+      <div className="flex justify-between text-xs text-gray-300">
         <span>{format ? format(min) : min}</span>
         <span>{format ? format(max) : max}</span>
       </div>

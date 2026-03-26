@@ -14,8 +14,13 @@ import type { PercentilePaths, HistogramBin } from '../../lib/types'
 import { fmt } from '../../lib/format'
 import { useI18n } from '../../i18n/I18nContext'
 
-const DARK = { text: '#94a3b8', grid: '#ffffff10' }
-const TOOLTIP_STYLE = { backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: 8 }
+const DARK = { text: '#9ca3af', grid: '#f3f4f6' }
+const TOOLTIP_STYLE = {
+  backgroundColor: '#fff',
+  border: '1px solid #e0e7ff',
+  borderRadius: 8,
+  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+}
 
 interface FanChartProps {
   percentilePaths: PercentilePaths
@@ -54,8 +59,8 @@ export function MonteCarloFanChart({ percentilePaths, years }: FanChartProps) {
         />
         <Tooltip
           contentStyle={TOOLTIP_STYLE}
-          labelStyle={{ color: '#94a3b8', fontSize: 12 }}
-          itemStyle={{ color: '#e2e8f0', fontSize: 12 }}
+          labelStyle={{ color: '#6b7280', fontSize: 12 }}
+          itemStyle={{ color: '#374151', fontSize: 12 }}
           formatter={(value: number | [number, number], name: string) => {
             if (Array.isArray(value))
               return [`${fmt.currencyCompact(value[0])} – ${fmt.currencyCompact(value[1])}`, name]
@@ -133,8 +138,8 @@ export function DepletionHistogram({ histogram, noDepletionLabel }: HistogramPro
         />
         <Tooltip
           contentStyle={TOOLTIP_STYLE}
-          labelStyle={{ color: '#94a3b8', fontSize: 12 }}
-          itemStyle={{ color: '#e2e8f0', fontSize: 12 }}
+          labelStyle={{ color: '#6b7280', fontSize: 12 }}
+          itemStyle={{ color: '#374151', fontSize: 12 }}
           formatter={(value: number) => [`${(value * 100).toFixed(1)}%`, t.fractionDepleted]}
           labelFormatter={(label) => `${t.yearPrefix} ${label}`}
         />

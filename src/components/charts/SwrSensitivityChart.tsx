@@ -17,7 +17,7 @@ interface Props {
   scenarios: SwrScenario[]
 }
 
-const DARK = { text: '#94a3b8', grid: '#ffffff10' }
+const DARK = { text: '#9ca3af', grid: '#f3f4f6' }
 
 export function SwrSensitivityChart({ scenarios }: Props) {
   const { t } = useI18n()
@@ -48,12 +48,13 @@ export function SwrSensitivityChart({ scenarios }: Props) {
         />
         <Tooltip
           contentStyle={{
-            backgroundColor: '#1e293b',
-            border: '1px solid #334155',
+            backgroundColor: '#fff',
+            border: '1px solid #e0e7ff',
             borderRadius: 8,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
-          labelStyle={{ color: '#94a3b8', fontSize: 12 }}
-          itemStyle={{ color: '#e2e8f0', fontSize: 12 }}
+          labelStyle={{ color: '#6b7280', fontSize: 12 }}
+          itemStyle={{ color: '#374151', fontSize: 12 }}
           formatter={(value: number, name: string) =>
             name === t.fireNumber
               ? [fmt.currencyCompact(value), name]

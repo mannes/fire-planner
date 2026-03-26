@@ -25,25 +25,25 @@ export function FireNumberSection({ inputs }: Props) {
       title={t.fireNumberTitle}
       subtitle={t.fireNumberSubtitle(fmt.percent(inputs.withdrawalRate))}
     >
-      <div className="text-4xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent mb-1 tabular-nums">
+      <div className="text-4xl font-bold text-indigo-600 mb-1 tabular-nums">
         {fmt.currency(fireNumber)}
       </div>
-      <p className="text-xs text-slate-500 mb-5">
+      <p className="text-xs text-gray-400 mb-5">
         = {fmt.currency(inputs.annualExpenses)} ÷ {fmt.percent(inputs.withdrawalRate)}
       </p>
 
       <div className="space-y-1.5 mb-5">
         <div className="flex justify-between text-xs">
-          <span className="text-slate-400">{t.portfolioProgress}</span>
-          <span className="text-slate-300 font-medium tabular-nums">{progressPct.toFixed(1)}%</span>
+          <span className="text-gray-500">{t.portfolioProgress}</span>
+          <span className="text-gray-700 font-medium tabular-nums">{progressPct.toFixed(1)}%</span>
         </div>
-        <div className="w-full bg-white/10 rounded-full h-2">
+        <div className="w-full bg-indigo-100 rounded-full h-2">
           <div
-            className="bg-gradient-to-r from-indigo-500 to-violet-500 h-2 rounded-full transition-all duration-500 shadow-lg shadow-indigo-500/30"
+            className="bg-gradient-to-r from-indigo-500 to-violet-500 h-2 rounded-full transition-all duration-500 shadow-sm"
             style={{ width: `${progressPct}%` }}
           />
         </div>
-        <div className="flex justify-between text-xs text-slate-600">
+        <div className="flex justify-between text-xs text-gray-400">
           <span>{fmt.currency(inputs.currentPortfolio)}</span>
           <span>{fmt.currency(fireNumber)}</span>
         </div>
@@ -51,9 +51,12 @@ export function FireNumberSection({ inputs }: Props) {
 
       <div className="grid grid-cols-3 gap-2">
         {swrVariants.map((swr) => (
-          <div key={swr} className="bg-white/5 rounded-xl p-2.5 text-center border border-white/5">
-            <div className="text-xs text-slate-500 mb-0.5">{fmt.percent(swr)}</div>
-            <div className="text-sm font-semibold text-slate-200 tabular-nums">
+          <div
+            key={swr}
+            className="bg-indigo-50 rounded-xl p-2.5 text-center border border-indigo-100"
+          >
+            <div className="text-xs text-gray-400 mb-0.5">{fmt.percent(swr)}</div>
+            <div className="text-sm font-semibold text-gray-800 tabular-nums">
               {fmt.currencyCompact(inputs.annualExpenses / swr)}
             </div>
           </div>

@@ -25,23 +25,23 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-indigo-50 to-violet-50">
       {/* Header */}
-      <header className="border-b border-white/10 bg-black/20 backdrop-blur-md sticky top-0 z-10">
+      <header className="border-b border-indigo-100 bg-white/80 backdrop-blur-md sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center shadow-md shadow-indigo-200">
             <span className="text-white text-sm font-bold">F</span>
           </div>
           <div>
-            <h1 className="text-base font-semibold text-white leading-none tracking-tight">
+            <h1 className="text-base font-semibold text-gray-900 leading-none tracking-tight">
               {t.appName}
             </h1>
-            <p className="text-xs text-slate-400">{t.appSubtitle}</p>
+            <p className="text-xs text-gray-400">{t.appSubtitle}</p>
           </div>
 
           <div className="ml-auto flex items-center gap-3">
             {/* Language switcher */}
-            <div className="flex rounded-lg overflow-hidden border border-white/10 text-xs">
+            <div className="flex rounded-lg overflow-hidden border border-indigo-200 text-xs">
               {(['nl', 'en'] as const).map((l) => (
                 <button
                   key={l}
@@ -49,7 +49,7 @@ export default function App() {
                   className={`px-2.5 py-1.5 transition-colors ${
                     lang === l
                       ? 'bg-indigo-600 text-white font-medium'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
+                      : 'text-gray-500 hover:text-gray-800 hover:bg-indigo-50'
                   }`}
                 >
                   {l === 'nl' ? '🇳🇱 NL' : '🇬🇧 EN'}
@@ -57,9 +57,9 @@ export default function App() {
               ))}
             </div>
 
-            <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs text-slate-300">{t.browserOnly}</span>
+            <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs text-gray-500">{t.browserOnly}</span>
             </div>
           </div>
         </div>

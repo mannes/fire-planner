@@ -33,17 +33,15 @@ export function YearsToFireSection({ inputs }: Props) {
       <div className="flex items-baseline gap-2 mb-5">
         {yearsToFire === null ? (
           <>
-            <span className="text-3xl font-bold text-red-400">{t.never}</span>
-            <span className="text-sm text-slate-500">{t.neverHint}</span>
+            <span className="text-3xl font-bold text-red-500">{t.never}</span>
+            <span className="text-sm text-gray-400">{t.neverHint}</span>
           </>
         ) : yearsToFire === 0 ? (
-          <span className="text-3xl font-bold text-emerald-400">{t.alreadyThere}</span>
+          <span className="text-3xl font-bold text-emerald-600">{t.alreadyThere}</span>
         ) : (
           <>
-            <span className="text-4xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent tabular-nums">
-              {yearsToFire}
-            </span>
-            <span className="text-lg text-slate-400">{t.years}</span>
+            <span className="text-4xl font-bold text-indigo-600 tabular-nums">{yearsToFire}</span>
+            <span className="text-lg text-gray-400">{t.years}</span>
           </>
         )}
       </div>

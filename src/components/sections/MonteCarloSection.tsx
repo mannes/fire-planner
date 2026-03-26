@@ -41,10 +41,10 @@ export function MonteCarloSection({ inputs }: Props) {
   const successPct = (result.successRate * 100).toFixed(1)
   const successColor =
     result.successRate >= 0.9
-      ? 'text-emerald-400'
+      ? 'text-emerald-600'
       : result.successRate >= 0.75
-        ? 'text-amber-400'
-        : 'text-red-400'
+        ? 'text-amber-500'
+        : 'text-red-500'
 
   return (
     <SectionCard
@@ -53,7 +53,7 @@ export function MonteCarloSection({ inputs }: Props) {
     >
       <div className="flex items-baseline gap-2 mb-5">
         <span className={clsx('text-4xl font-bold tabular-nums', successColor)}>{successPct}%</span>
-        <span className="text-sm text-slate-500">{t.survives(String(retirementYears))}</span>
+        <span className="text-sm text-gray-400">{t.survives(String(retirementYears))}</span>
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-5">
@@ -78,12 +78,12 @@ export function MonteCarloSection({ inputs }: Props) {
       </div>
 
       <div className="mb-4">
-        <p className="text-xs font-medium text-slate-500 mb-2">{t.portfolioDistribution}</p>
+        <p className="text-xs font-medium text-gray-400 mb-2">{t.portfolioDistribution}</p>
         <MonteCarloFanChart percentilePaths={result.percentilePaths} years={retirementYears} />
       </div>
 
       <div>
-        <p className="text-xs font-medium text-slate-500 mb-2">{t.whenDepleted}</p>
+        <p className="text-xs font-medium text-gray-400 mb-2">{t.whenDepleted}</p>
         <DepletionHistogram
           histogram={result.depletionHistogram}
           noDepletionLabel={t.noDepletion}

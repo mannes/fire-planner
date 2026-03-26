@@ -1,5 +1,6 @@
 import type { GlobalInputs } from '../../lib/types'
 import { fmt } from '../../lib/format'
+import { useI18n } from '../../i18n/I18nContext'
 import { SliderInput } from './SliderInput'
 
 interface Props {
@@ -8,15 +9,17 @@ interface Props {
 }
 
 export function InputPanel({ inputs, onChange }: Props) {
+  const { t } = useI18n()
+
   return (
-    <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-6">
+    <div className="bg-white rounded-2xl shadow-sm border border-indigo-100 p-6 space-y-6">
       <div>
-        <h2 className="text-base font-semibold text-white leading-none mb-1">Your Numbers</h2>
-        <p className="text-xs text-slate-400">All rates are real (inflation-adjusted)</p>
+        <h2 className="text-base font-semibold text-gray-900 leading-none mb-1">{t.yourNumbers}</h2>
+        <p className="text-xs text-gray-400">{t.realRatesNote}</p>
       </div>
 
       <SliderInput
-        label="Annual Expenses"
+        label={t.annualExpenses}
         min={10000}
         max={300000}
         step={5000}
@@ -26,7 +29,7 @@ export function InputPanel({ inputs, onChange }: Props) {
       />
 
       <SliderInput
-        label="Current Portfolio"
+        label={t.currentPortfolio}
         min={0}
         max={5000000}
         step={10000}
@@ -36,7 +39,7 @@ export function InputPanel({ inputs, onChange }: Props) {
       />
 
       <SliderInput
-        label="Annual Savings"
+        label={t.annualSavings}
         min={0}
         max={300000}
         step={5000}
@@ -46,8 +49,8 @@ export function InputPanel({ inputs, onChange }: Props) {
       />
 
       <SliderInput
-        label="Expected Real Return"
-        hint="European equities historically ~5–7% real"
+        label={t.expectedReturn}
+        hint={t.expectedReturnHint}
         min={0.01}
         max={0.15}
         step={0.005}
@@ -57,8 +60,8 @@ export function InputPanel({ inputs, onChange }: Props) {
       />
 
       <SliderInput
-        label="Safe Withdrawal Rate"
-        hint="4% is classic; 3.5% is more conservative for European retirees"
+        label={t.withdrawalRate}
+        hint={t.withdrawalRateHint}
         min={0.02}
         max={0.06}
         step={0.005}
