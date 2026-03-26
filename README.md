@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# FIRECalc
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Browser-only FIRE (Financial Independence, Retire Early) calculator. No backend, no API calls — all calculations run client-side.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **FIRE Number** — how much you need to retire, with portfolio progress bar
+- **Years to FIRE** — deterministic projection with portfolio growth chart
+- **SWR Explorer** — compares 3–5% withdrawal rates across FIRE number, years to FIRE, and portfolio longevity
+- **Monte Carlo** — 1000 simulations with log-normal returns, fan chart, and depletion histogram
+- **Multilanguage** — Dutch (default) and English
+- **FIRE concepts** — inline explainers on the 4% rule, expected returns, and sequence-of-returns risk
 
-## React Compiler
+## Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Requires Node 24 (`nvm use 24`).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server |
+| `npm run build` | Type-check and build for production |
+| `npm run typecheck` | TypeScript type check |
+| `npm run lint` | ESLint |
+| `npm run format` | Prettier (auto-fix) |
+| `npm run test` | Vitest (28 tests) |
+| `npm run ci` | Full CI: typecheck + lint + format + test |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Stack
+
+- React 19 + TypeScript + Vite 8
+- Tailwind CSS v4 (via `@tailwindcss/vite` plugin)
+- Recharts
+- Vitest + ESLint + Prettier
+
+## Deployment
+
+Pushes to `main` automatically deploy to GitHub Pages via GitHub Actions. Enable it once in repo Settings → Pages → Source → "GitHub Actions".
+
+See `PLAN.md` for architecture decisions and algorithm details.
