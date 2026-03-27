@@ -70,6 +70,7 @@ export function InputPanel({ inputs, onChange }: Props) {
         value={inputs.expectedRealReturn}
         onChange={(v) => onChange('expectedRealReturn', v)}
         format={fmt.percent}
+        inputScale={100}
       />
 
       <SliderInput
@@ -82,6 +83,7 @@ export function InputPanel({ inputs, onChange }: Props) {
         value={inputs.withdrawalRate}
         onChange={(v) => onChange('withdrawalRate', v)}
         format={fmt.percent}
+        inputScale={100}
       />
     </div>
   )
