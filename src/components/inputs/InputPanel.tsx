@@ -30,7 +30,7 @@ export function InputPanel({ inputs, onChange }: Props) {
         info={t.annualExpensesInfo}
         valueNote={t.annualizedAmount(fmt.currency(inputs.annualExpenses))}
         min={800}
-        max={25000}
+        max={10000}
         step={100}
         value={monthlyExpenses}
         onChange={(v) => onChange('annualExpenses', v * 12)}
@@ -41,7 +41,7 @@ export function InputPanel({ inputs, onChange }: Props) {
         label={t.currentPortfolio}
         info={t.currentPortfolioInfo}
         min={0}
-        max={5000000}
+        max={2000000}
         step={10000}
         value={inputs.currentPortfolio}
         onChange={(v) => onChange('currentPortfolio', v)}
@@ -53,7 +53,7 @@ export function InputPanel({ inputs, onChange }: Props) {
         info={t.annualSavingsInfo}
         valueNote={t.annualizedAmount(fmt.currency(inputs.annualSavings))}
         min={0}
-        max={25000}
+        max={10000}
         step={100}
         value={monthlySavings}
         onChange={(v) => onChange('annualSavings', v * 12)}

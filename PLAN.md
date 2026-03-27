@@ -87,6 +87,18 @@ The popups are dismissible via close button, outside click, or `Escape`. Copy sh
 
 Expenses and savings are now entered as **monthly** amounts in the UI, with the derived yearly amount shown alongside. The calculation layer still uses annual values internally, so `InputPanel` converts monthly input back to annual numbers before passing state into `src/lib/`.
 
+### Slider ranges
+
+Money sliders are capped at realistic values for a European retail user:
+
+| Slider | Min | Max |
+| --- | --- | --- |
+| Monthly expenses | €800 | €10,000 |
+| Current portfolio | €0 | €2,000,000 |
+| Monthly savings | €0 | €10,000 |
+| Expected real return | 1% | 15% |
+| Withdrawal rate | 2% | 6% |
+
 ### Branding
 
 The product name is **FIRE Planner**. Browser title, header branding, README/PLAN naming, and favicon should stay aligned with that brand. Current visual branding uses a fire motif.
